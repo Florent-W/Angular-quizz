@@ -1,0 +1,9 @@
+<section class="question_container" *ngFor="let content of quizContent; let i = index">
+  <h4 class="question_label"><b>Question {{ i + 1 }} :</b> {{ content?.question }}</h4>
+  <app-answer
+    [answers]="content?.answers"
+    [questionId]="content?.id"
+    (answerSelected)="onAnswerSelected(content.id)"
+  ></app-answer>
+  <p *ngIf="!!getQuestionDate(content.id)" class="my-2">Répondu en {{ getQuestionDate(content.id) | dateToSeconds:currentDate }}</p>
+</section>
