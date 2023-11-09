@@ -9,7 +9,7 @@ export class QuizService {
   playerAnswers: {questionId: number; answer: string}[] = [];
   score = 0;
   isQuizFinished = false;
-  playerName: string = '';
+  userName: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -38,11 +38,12 @@ export class QuizService {
     this.playerAnswers.push({questionId, answer});
   }
 
-  getQuizContent() {
-    this.http.get('http://localhost:3000/questions').subscribe((questions: any) => {
-      for (const question of questions) {
+  getQuizContent(idCategory: number) {
+    this.http.get(`http://localhost:3000/categories?id=${idCategory}`).subscribe((questions: any) => {
+      for (const question of questions[0].questions) {
+        console.log(question)
         this.http.get(`http://localhost:3000/answers?questionId=${question.id}`).subscribe((answers: any) => {
-          this.quizContent.push({
+        this.quizContent.push({
               id: question.id,
               question: question.questionLabel,
               answers

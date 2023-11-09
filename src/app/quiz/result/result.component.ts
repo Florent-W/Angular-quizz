@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 export class ResultComponent implements OnInit {
   score = 0;
   scoreTotal = this.quizService.quizContent.length;
-  playerName = this.quizService.playerName;
+  userName = this.quizService.userName;
 
   constructor(private quizService: QuizService, private router: Router) { }
 

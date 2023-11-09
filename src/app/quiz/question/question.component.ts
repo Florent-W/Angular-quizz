@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { QuizService } from "../../shared/services/quiz.service";
 
 @Component({
@@ -10,11 +10,12 @@ export class QuestionComponent implements OnInit {
   quizContent: any[] = this.quizService.quizContent;
   answeredDate: Map<number, Date> = new Map();
   currentDate = new Date();
+  @Input() idCategory: any;
 
   constructor(private quizService: QuizService) { }
 
   ngOnInit(): void {
-    this.quizService.getQuizContent();
+    this.quizService.getQuizContent(this.idCategory);
   }
 
   onAnswerSelected(questionId: number) {

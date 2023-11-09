@@ -1,4 +1,5 @@
 # AngularQuiz
+Ce projet a été effectué par Axel Gourdin et Florent Weltmann
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
 
