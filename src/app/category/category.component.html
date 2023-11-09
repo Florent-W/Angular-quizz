@@ -1,8 +1,11 @@
-<form (ngSubmit)="submit()">
-<input type="search" placeholder="Rechercher une catégorie" [(ngModel)]="textRecherche" name="searchTerm">
-</form>
+<div class="centered-content">
+    <form class="search-form" (ngSubmit)="submit()" >
+        <input class="search-input" type="search" placeholder="Rechercher une catégorie" [(ngModel)]="textRecherche" name="searchTerm">
+        <button class="search-button" type="submit">Rechercher</button>
+        <button class="search-button" type="reset">Reset</button>
+    </form>
+</div>
 
-<input>
 <div class="divCategory" *ngFor="let categorie of categories" (click)="goToQuizz(categorie.id)">
     {{categorie.name}}
 </div>

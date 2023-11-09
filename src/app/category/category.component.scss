@@ -1,8 +1,51 @@
-.divCategory{
-    border: solid black 1px;
+.categories {
     display: flex;
-    flex-direction: row;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+/* Style des blocs des catégories */
+.divCategory {
+    text-align: center;
+    width: 25%;
+    display: inline-block; /* Afficher les éléments côte à côte */
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+}
+
+/* Effet hover */
+.divCategory:hover {
+    background-color: #8a2be2; /* Couleur violette en cas de hover */
+    color: white; /* Changer la couleur du texte pour un meilleur contraste */
+}
+.centered-content {
+    text-align: center;
+}
+
+/* Style de l'input de recherche */
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    /* Autres styles de votre choix */
+}
+
+/* Style des boutons de recherche */
+.search-button {
+    padding: 8px 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8a2be2;
+    color: white;
+    cursor: pointer;
+    /* Autres styles de votre choix */
+}
+
+/* Style au survol des boutons */
+.search-button:hover {
+    background-color: #6e1bcb;
+    /* Autres styles au survol */
 }

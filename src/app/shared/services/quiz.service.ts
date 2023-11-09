@@ -38,11 +38,16 @@ export class QuizService {
     this.playerAnswers.push({questionId, answer});
   }
 
+  /***
+   * Récupération du contenu du quizz
+   */
   getQuizContent(idCategory: number) {
+    // Parcours du json
     this.http.get(`http://localhost:3000/categories?id=${idCategory}`).subscribe((questions: any) => {
-      for (const question of questions[0].questions) {
-        console.log(question)
+    // Récupération des questions de la catégorie
+    for (const question of questions[0].questions) {
         this.http.get(`http://localhost:3000/answers?questionId=${question.id}`).subscribe((answers: any) => {
+        // Informations des questions dans un tableau
         this.quizContent.push({
               id: question.id,
               question: question.questionLabel,

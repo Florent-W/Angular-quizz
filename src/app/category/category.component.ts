@@ -33,14 +33,15 @@ export class CategoryComponent implements OnInit{
     });
   }
 
-  
-  submit() {
+  // Lorsqu'on recherche une catégorie
+  submit() {  
     if (this.textRecherche.trim() === '') {
       this.categoryService.getCategories().subscribe((data: any) => {
         this.categories = this.categoriesOriginal;
       });
     } else {
     this.categories = this.categories.filter((categorie: any) => {
+      console.log(this.textRecherche);
       return categorie.name.includes(this.textRecherche);
     });
   }
